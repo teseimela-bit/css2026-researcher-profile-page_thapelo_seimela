@@ -13,7 +13,7 @@ import numpy as np
 st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layout="wide")
 
 # Sidebar Menu
-st.sidebar.title("Navigation", color: color='red')
+st.sidebar.title("Navigation, color: color='red'")
 menu = st.sidebar.radio(
     "Go to:",
     ["Researcher Profile", "Publications", "STEM Data Explorer", "Contact"],
