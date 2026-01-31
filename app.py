@@ -13,7 +13,7 @@ import numpy as np
 st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layout="wide")
 
 # Sidebar Menu
-st.sidebar.title("Navigation")
+st.sidebar.title("Navigation", color = "blue")
 menu = st.sidebar.radio(
     "Go to:",
     ["Researcher Profile", "Publications", "STEM Data Explorer", "Contact"],
@@ -46,7 +46,7 @@ if menu == "Researcher Profile":
 
     # Collect basic information
     name = "Thapelo Seimela"
-    field = "Material Scientist|Solar Cell"
+    field = "Material Scientist| Solar Cell"
     institution = "University of Pretoria"
 
     # Display basic profile information
@@ -138,5 +138,8 @@ elif menu == "STEM Data Explorer":
 elif menu == "Contact":
     # Add a contact section
     st.header("Contact Information")
-    email = "jane.doe@example.com"
+    email = "teseimela@gmail.com.com"
+    linkedin = "https://www.linkedin.com/in/thapelo-seimela-680185b8/"
+    
     st.write(f"You can reach me at {email}.")
+    st.write(f"LinkedIn profile {linkedin}")
