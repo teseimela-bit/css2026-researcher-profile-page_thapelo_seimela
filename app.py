@@ -46,8 +46,8 @@ if menu == "Researcher Profile":
 
     # Collect basic information
     name = "Thapelo Seimela"
-    field = "Astrophysics"
-    institution = "University of Science"
+    field = "Material Scientist|Solar Cell"
+    institution = "University of Pretoria"
 
     # Display basic profile information
     st.write(f"**Name:** {name}")
