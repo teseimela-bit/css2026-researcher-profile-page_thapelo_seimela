@@ -21,22 +21,27 @@ menu = st.sidebar.radio(
 
 # Dummy STEM data
 physics_data = pd.DataFrame({
-    "Experiment": ["Alpha Decay", "Beta Decay", "Gamma Ray Analysis", "Quark Study", "Higgs Boson"],
-    "Energy (MeV)": [4.2, 1.5, 2.9, 3.4, 7.1],
-    "Date": pd.date_range(start="2024-01-01", periods=5),
+    "Device": ["Pristine", "1%", "2%", "3%"],
+    "FF (%)": [68.24, 68.36, 67.91, 68.18],
+    "Jsc (mA/cm^2)": [10.81, 13.00, 14.92, 11.78],
+    "Voc (V)": [0.632, 0.634, 0.627, 0.630],
+    "PCE (%)": [4.67, 5.63, 6.36, 5.06],
+    "Date": pd.date_range(start="2025-09-05", end = "2025-09-25", periods=4),
 })
 
-astronomy_data = pd.DataFrame({
-    "Celestial Object": ["Mars", "Venus", "Jupiter", "Saturn", "Moon"],
-    "Brightness (Magnitude)": [-2.0, -4.6, -1.8, 0.2, -12.7],
-    "Observation Date": pd.date_range(start="2024-01-01", periods=5),
+chargetransport_data = pd.DataFrame({
+    "Device": ["Pristine", "1%", "2%", "3%"],
+    "Jsat (mA/cm^2)": [10.96, 11.92, 13.11, 15.03],
+    "Gmax (×10^26 m^-3 s^-1)": [5.04, 6.61, 8.58, 6.05],
+    "M (×10^-4 cm^-2 V^-1 s^-1)":  [2.28, 2.69, 3.62, 2.56]
 })
 
-weather_data = pd.DataFrame({
-    "City": ["Cape Town", "London", "New York", "Tokyo", "Sydney"],
-    "Temperature (°C)": [25, 10, -3, 15, 30],
-    "Humidity (%)": [65, 70, 55, 80, 50],
-    "Recorded Date": pd.date_range(start="2024-01-01", periods=5),
+xrd_data = pd.DataFrame({
+    "Peak":[111, 200, 220],
+    "2 theta (deg)":[42.8, 49.9, 74.5],
+    "FWHM (deg)":[0.867, 0.964, 0.714],
+    "D (nm)": [9.737, 8.999, 13.823]
+    
 })
 
 # Sections based on menu selection
@@ -46,17 +51,21 @@ if menu == "Researcher Profile":
 
     # Collect basic information
     name = "Thapelo Seimela"
-    field = "Material Scientist| Solar Cell"
+    field = "Material Scientist| Solar energy"
+    department = "Department of Physics"
     institution = "University of Pretoria"
+    address = "Lynnwood Rd, Hatfield, Pretoria, 0002"
 
     # Display basic profile information
     st.write(f"**Name:** {name}")
     st.write(f"**Field of Research:** {field}")
+    st.write(f"**Department:** {department}")
     st.write(f"**Institution:** {institution}")
+    st.write(f"**Address:** {address}")
     
     st.image(
-    "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg",
-    caption="Nature (Pixabay)"
+    "20230422_143007.jpg",
+    caption="University of Pretoria (Hatfield)"
 )
 
 elif menu == "Publications":
@@ -66,7 +75,7 @@ elif menu == "Publications":
     # Upload publications file
     uploaded_file = st.file_uploader("Upload a CSV of Publications", type="csv")
     if uploaded_file:
-        publications = pd.read_csv(uploaded_file)
+        publications = pd.read_csv("Publications.csv")
         st.dataframe(publications)
 
         # Add filtering for year or keyword
@@ -95,43 +104,46 @@ elif menu == "STEM Data Explorer":
     # Tabbed view for STEM data
     data_option = st.sidebar.selectbox(
         "Choose a dataset to explore", 
-        ["Physics Experiments", "Astronomy Observations", "Weather Data"]
+        ["Solar Cell Performance", "Charge Transport", "XRD Data"]
     )
-
-    if data_option == "Physics Experiments":
-        st.write("### Physics Experiment Data")
+    st.image(
+        "C:/Users/tesei/Downloads/streamlit_files/streamlit_files/Solar_cell_schem.jpg",
+        caption = "Schematic diagram of organic solar cell containg copper nanorods and it's energy band diagram"
+        )
+    if data_option == "Solar Cell Performance":
+        st.write("### A summary of device performance for the OSC with ITO/PEDOT:PSS/P3HT:PCBM/PDINO:CuNRs/Ag")
         st.dataframe(physics_data)
         # Add widget to filter by Energy levels
-        energy_filter = st.slider("Filter by Energy (MeV)", 0.0, 10.0, (0.0, 10.0))
+        performance_filter = st.slider("Filter by PCE (%))", 4.0, 7.0, (4.0, 7.0))
         filtered_physics = physics_data[
-            physics_data["Energy (MeV)"].between(energy_filter[0], energy_filter[1])
+            physics_data["PCE (%)"].between(performance_filter[0], performance_filter[1])
         ]
-        st.write(f"Filtered Results for Energy Range {energy_filter}:")
+        st.write(f"Filtered Results for PCE (%) {performance_filter}:")
         st.dataframe(filtered_physics)
 
-    elif data_option == "Astronomy Observations":
-        st.write("### Astronomy Observation Data")
-        st.dataframe(astronomy_data)
-        # Add widget to filter by Brightness
-        brightness_filter = st.slider("Filter by Brightness (Magnitude)", -15.0, 5.0, (-15.0, 5.0))
-        filtered_astronomy = astronomy_data[
-            astronomy_data["Brightness (Magnitude)"].between(brightness_filter[0], brightness_filter[1])
+    elif data_option == "Charge Transport":
+        st.write("### Charge transport parameters of ITO/PEDOT:PSS/P3HT:PCBM/PDINO:CuNRs/Ag.")
+        st.dataframe(chargetransport_data)
+        # Add widget to filter by M
+        chargetranport_filter = st.slider("Filter by M (M (×10^-4 cm^-2 V^-1 s^-1))", 2.0, 4.0, (2.0, 4.0))
+        filtered_chargetransport = chargetransport_data[
+            chargetransport_data["M (×10^-4 cm^-2 V^-1 s^-1)"].between(chargetranport_filter[0], chargetranport_filter[1])
         ]
-        st.write(f"Filtered Results for Brightness Range {brightness_filter}:")
-        st.dataframe(filtered_astronomy)
+        st.write(f"Filtered Results for Charge Transport {chargetranport_filter}:")
+        st.dataframe(filtered_chargetransport)
 
-    elif data_option == "Weather Data":
-        st.write("### Weather Data")
-        st.dataframe(weather_data)
+    elif data_option == "XRD Data":
+        st.write("### XRD Data")
+        st.dataframe(xrd_data)
         # Add widgets to filter by temperature and humidity
-        temp_filter = st.slider("Filter by Temperature (°C)", -10.0, 40.0, (-10.0, 40.0))
-        humidity_filter = st.slider("Filter by Humidity (%)", 0, 100, (0, 100))
-        filtered_weather = weather_data[
-            weather_data["Temperature (°C)"].between(temp_filter[0], temp_filter[1]) &
-            weather_data["Humidity (%)"].between(humidity_filter[0], humidity_filter[1])
+        temp_filter = st.slider("Filter by FWHM (deg)", 0.0, 10.0, (0.0, 10.0))
+        humidity_filter = st.slider("Filter by D (nm)", 8, 14, (8, 14))
+        filtered_xrd = xrd_data[
+            xrd_data["FWHM (deg)"].between(temp_filter[0], temp_filter[1]) &
+            xrd_data["D (nm)"].between(humidity_filter[0], humidity_filter[1])
         ]
         st.write(f"Filtered Results for Temperature {temp_filter} and Humidity {humidity_filter}:")
-        st.dataframe(filtered_weather)
+        st.dataframe(filtered_xrd)
         
         
 
@@ -140,6 +152,8 @@ elif menu == "Contact":
     st.header("Contact Information")
     email = "teseimela@gmail.com.com"
     linkedin = "https://www.linkedin.com/in/thapelo-seimela-680185b8/"
+    orcid = "https://orcid.org/my-orcid?orcid=0000-0001-9961-4106"
     
     st.write(f"You can reach me at {email}.")
-    st.write(f"LinkedIn profile {linkedin}")
+    st.write(f"My LinkedIn account in {linkedin}.")
+    st.write(f"My Orcid {orcid}")
