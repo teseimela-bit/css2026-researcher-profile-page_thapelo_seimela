@@ -16,7 +16,23 @@ st.markdown("""
     }
 </style>
 """, unsafe_allow_html=True)
+st.markdown(
+    """
+    <style>
+    /* Target the sidebar container using its data-testid */
+    [data-testid="stSidebarContent"] {
+        background-color: #ff0000; /* Example: Red background */
+        color: white; /* Example: Change text color for contrast */
+    }
 
+    /* Target the overall sidebar element if needed (less common) */
+    [data-testid="stSidebar"] {
+        background-image: none; /* Ensure no default image interferes */
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Set page title
 st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layout="wide")
 
