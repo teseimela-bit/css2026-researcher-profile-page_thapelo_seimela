@@ -19,14 +19,6 @@ menu = st.sidebar.radio(
     ["Researcher Profile", "Publications", "STEM Data Explorer", "Contact"],
 )
 
-st.markdown("""
-<style>
-    .stApp {
-        background-color: #FFA421;
-    }
-</style>
-""", unsafe_allow_html=True)
-
 # Dummy STEM data
 physics_data = pd.DataFrame({
     "Device": ["Pristine", "1%", "2%", "3%"],
@@ -115,7 +107,7 @@ elif menu == "STEM Data Explorer":
         ["Solar Cell Performance", "Charge Transport", "XRD Data"]
     )
     st.image(
-       # "Solar_cell_schem.jpg",
+        "C:/Users/tesei/Downloads/streamlit_files/streamlit_files/Solar_cell_schem.jpg",
         caption = "Schematic diagram of organic solar cell containg copper nanorods and it's energy band diagram"
         )
     if data_option == "Solar Cell Performance":
