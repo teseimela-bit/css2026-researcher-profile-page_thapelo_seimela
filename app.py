@@ -41,10 +41,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-Jsc = st.markdown("Jsc: J<sub>sc</sub>", unsafe_allow_html=True)
-#st.markdown("Chemical Formula: J<sub>sc</sub>", unsafe_allow_html=True)
-
-
 # Dummy STEM data
 physics_data = pd.DataFrame({
     "Device": ["Pristine", "1%", "2%", "3%"],
