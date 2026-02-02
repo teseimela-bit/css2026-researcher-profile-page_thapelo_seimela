@@ -11,9 +11,7 @@ import numpy as np
 
 st.markdown("""
 <style>
-    .stApp {
-        background-image: URL ("solar-panels-roof-solar-cell");
-    }
+
 [data-testid="stAppViewContainer"] {
 background-image: URL("solar-panels-roof-solar-cell");
 background-size: cover;
