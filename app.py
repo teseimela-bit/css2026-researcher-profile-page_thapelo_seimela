@@ -12,7 +12,7 @@ import numpy as np
 st.markdown("""
 <style>
     .stApp {
-        background-color: grey;
+        background-color: sky blue;
     }
 </style>
 """, unsafe_allow_html=True)
