@@ -12,7 +12,7 @@ import numpy as np
 st.markdown("""
 <style>
     .stApp {
-        background-color: blue;
+        background-image: URL ("solar-panels-roof-solar-cell");
     }
 </style>
 """, unsafe_allow_html=True)
