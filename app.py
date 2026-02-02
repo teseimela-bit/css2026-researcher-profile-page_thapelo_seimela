@@ -12,7 +12,7 @@ import numpy as np
 st.markdown("""
 <style>
     .stApp{
-        background-color: #87CEEB;
+        background-color: #9EECFF;
 }
 </style>
 """, unsafe_allow_html=True)
@@ -21,7 +21,7 @@ st.markdown(
     """
     <style>
     [data-testid="stSidebarContent"] {
-        background-color: blue;
+        background-color: #87CEEB;
     }
     </style>
     """,
