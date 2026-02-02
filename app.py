@@ -37,9 +37,6 @@ st.markdown(
     }
 
     
-    [data-testid="stSidebar"] {
-        background-image: none; 
-    }
     </style>
     """,
     unsafe_allow_html=True
