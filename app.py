@@ -17,16 +17,6 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown(
-    """
-    <style>
-    [data-testid="stSidebarContent"] {
-        background-color: #87CEEB;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 # Set page title
 st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layout="wide")
 
