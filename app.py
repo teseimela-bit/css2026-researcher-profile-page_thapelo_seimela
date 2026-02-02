@@ -14,6 +14,12 @@ st.markdown("""
     .stApp {
         background-image: URL ("solar-panels-roof-solar-cell");
     }
+[data-testid="stAppViewContainer"] {
+background-image: URL("solar-panels-roof-solar-cell");
+background-size: cover;
+background-position: center;
+background-repeat: no-repeat;
+}
 </style>
 """, unsafe_allow_html=True)
 st.markdown(
