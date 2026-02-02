@@ -9,14 +9,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-st.markdown("""
-<style>
-    .stApp{
-        background-color: #87CEEB;
-}
-</style>
-""", unsafe_allow_html=True)
-
 # Set page title
 st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layout="wide")
 
@@ -24,7 +16,7 @@ st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layou
 st.sidebar.title("Navigation")
 menu = st.sidebar.radio(
     "Go to:",
-    ["**Researcher Profile**", "**Publications**", "**STEM Data Explorer**", "**Contact**"],
+    ["Researcher Profile", "Publications", "STEM Data Explorer", "Contact"],
 )
 
 # Dummy STEM data
@@ -115,7 +107,7 @@ elif menu == "STEM Data Explorer":
         ["Solar Cell Performance", "Charge Transport", "XRD Data"]
     )
     st.image(
-        "Solar_cell_schem.jpg",
+        "C:/Users/tesei/Downloads/streamlit_files/streamlit_files/Solar_cell_schem.jpg",
         caption = "Schematic diagram of organic solar cell containg copper nanorods and it's energy band diagram"
         )
     if data_option == "Solar Cell Performance":
@@ -154,6 +146,7 @@ elif menu == "STEM Data Explorer":
         st.dataframe(filtered_xrd)
         
         
+
 elif menu == "Contact":
     # Add a contact section
     st.header("Contact Information")
