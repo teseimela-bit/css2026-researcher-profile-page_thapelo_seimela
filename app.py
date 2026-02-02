@@ -49,7 +49,7 @@ Jsc = st.markdown("Jsc: J<sub>sc</sub>", unsafe_allow_html=True)
 physics_data = pd.DataFrame({
     "Device": ["Pristine", "1%", "2%", "3%"],
     "FF (%)": [68.24, 68.36, 67.91, 68.18],
-    "J<sub>sc</sub>)(mA/cm^2)": [10.81, 13.00, 14.92, 11.78],
+    $J_{sc} \text{ (mA/cm}^2\text{)}$: [10.81, 13.00, 14.92, 11.78],
     "Voc (V)": [0.632, 0.634, 0.627, 0.630],
     "PCE (%)": [4.67, 5.63, 6.36, 5.06],
     "Date": pd.date_range(start="2025-09-05", end = "2025-09-25", periods=4),
