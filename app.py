@@ -107,7 +107,7 @@ elif menu == "STEM Data Explorer":
         ["Solar Cell Performance", "Charge Transport", "XRD Data"]
     )
     st.image(
-        "C:/Users/tesei/Downloads/streamlit_files/streamlit_files/Solar_cell_schem.jpg",
+        "Solar_cell_schem.jpg",
         caption = "Schematic diagram of organic solar cell containg copper nanorods and it's energy band diagram"
         )
     if data_option == "Solar Cell Performance":
@@ -146,7 +146,6 @@ elif menu == "STEM Data Explorer":
         st.dataframe(filtered_xrd)
         
         
-
 elif menu == "Contact":
     # Add a contact section
     st.header("Contact Information")
