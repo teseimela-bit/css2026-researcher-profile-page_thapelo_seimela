@@ -33,7 +33,7 @@ st.markdown(
     <style>
     [data-testid="stSidebarContent"] {
         background-color: #00CCFF; 
-        color: white; 
+        color: blue; 
     }
 
     
