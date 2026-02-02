@@ -11,12 +11,8 @@ import numpy as np
 
 st.markdown("""
 <style>
-
-[data-testid="stAppViewContainer"] {
-background-image: URL("solar-panels-roof-solar-cell");
-background-size: cover;
-background-position: center;
-background-repeat: no-repeat;
+    st.app{
+    background-color: blue
 }
 </style>
 """, unsafe_allow_html=True)
