@@ -23,7 +23,7 @@ menu = st.sidebar.radio(
 st.markdown("""
 <style>
     .stApp {
-        background-color: #FFA421;
+        background-color: #D2F7FF;
     }
 </style>
 """, unsafe_allow_html=True)
