@@ -33,7 +33,7 @@ st.markdown(
     <style>
     /* Target the sidebar container using its data-testid */
     [data-testid="stSidebarContent"] {
-        background-color: #ff0000; /* Example: Red background */
+        background-color: #00CCFF; /* Example: Red background */
         color: white; /* Example: Change text color for contrast */
     }
 
