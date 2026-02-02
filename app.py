@@ -19,7 +19,6 @@ menu = st.sidebar.radio(
     ["Researcher Profile", "Publications", "STEM Data Explorer", "Contact"],
 )
 
-
 st.markdown("""
 <style>
     .stApp {
@@ -41,6 +40,8 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
+st.markdown("Jsc: J<sub>sc</sub>", unsafe_allow_html=True)
 
 # Dummy STEM data
 physics_data = pd.DataFrame({
