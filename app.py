@@ -11,8 +11,8 @@ import numpy as np
 
 st.markdown("""
 <style>
-    st.app{
-        background-color: blue
+    .stApp{
+        background-color: blue;
 }
 </style>
 """, unsafe_allow_html=True)
