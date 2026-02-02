@@ -20,15 +20,8 @@ st.markdown("""
 st.markdown(
     """
     <style>
-    /* Target the sidebar container using its data-testid */
     [data-testid="stSidebarContent"] {
-        background-color: #87CEEB; /* Example: Red background */
-        color: white; /* Example: Change text color for contrast */
-    }
-
-    /* Target the overall sidebar element if needed (less common) */
-    [data-testid="stSidebar"] {
-        background-image: none; /* Ensure no default image interferes */
+        background-color: #87CEEB;
     }
     </style>
     """,
