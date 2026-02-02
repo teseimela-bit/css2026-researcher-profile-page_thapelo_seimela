@@ -12,10 +12,11 @@ import numpy as np
 st.markdown("""
 <style>
     st.app{
-    background-color: blue
+        background-color: blue
 }
 </style>
 """, unsafe_allow_html=True)
+
 st.markdown(
     """
     <style>
