@@ -19,6 +19,14 @@ menu = st.sidebar.radio(
     ["Researcher Profile", "Publications", "STEM Data Explorer", "Contact"],
 )
 
+st.markdown("""
+<style>
+    .stApp {
+        background-color: #FFA421;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Dummy STEM data
 physics_data = pd.DataFrame({
     "Device": ["Pristine", "1%", "2%", "3%"],
