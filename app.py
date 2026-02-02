@@ -9,6 +9,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
+st.markdown("""
+<style>
+    .stApp {
+        background-color: #FFA421;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Set page title
 st.set_page_config(page_title="Researcher Profile and STEM Data Explorer", layout="wide")
 
