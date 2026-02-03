@@ -53,7 +53,7 @@ physics_data = pd.DataFrame({
 
 chargetransport_data = pd.DataFrame({
     "Device": ["Pristine", "1%", "2%", "3%"],
-    "J_sat (mA/cm^2)": [10.96, 11.92, 13.11, 15.03],
+    "st.markdown("Formula with HTML: J<sub>sc</sub>O", unsafe_allow_html=True)J_sat (mA/cm^2)": [10.96, 11.92, 13.11, 15.03],
     "Gmax (×10^26 m^-3 s^-1)": [5.04, 6.61, 8.58, 6.05],
     "M (×10^-4 cm^-2 V^-1 s^-1)":  [2.28, 2.69, 3.62, 2.56]
 })
