@@ -40,7 +40,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.markdown("Formula with HTML: J<sub>sc</sub>O", unsafe_allow_html=True)
+st.markdown("J<sub>sc</sub>", unsafe_allow_html=True)
 # Dummy STEM data
 physics_data = pd.DataFrame({
     "Device": ["Pristine", "1%", "2%", "3%"],
